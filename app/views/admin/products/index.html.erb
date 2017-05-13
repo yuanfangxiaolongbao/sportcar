@@ -9,6 +9,7 @@
     <th>叙述</th>
     <th>库存</th>
     <th>价格</th>
+    <th>图片</th>
     <th>选项</th>
     <th>创建日期</th>
   </tr>
@@ -26,6 +27,9 @@
       </td>
       <td>
         <%= p.price %>
+      </td>
+      <td>
+        <%= p.image %>
       </td>
       <td>
         <%= link_to("Edit", edit_admin_product_path(p)) %>
