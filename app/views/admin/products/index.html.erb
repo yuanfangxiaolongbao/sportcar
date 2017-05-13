@@ -3,8 +3,18 @@
   <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default") %>
 </div>
 <table class="table table-bordered">
+  <tr>
+    <th>#</th>
+    <th>品名</th>
+    <th>叙述</th>
+    <th>库存</th>
+    <th>价格</th>
+    <th>选项</th>
+    <th>创建日期</th>
+  </tr>
   <% @products.each do |p| %>
     <tr>
+      <th>#</th>
       <td>
         <%= link_to(p.title, admin_product_path(p)) %>
       </td>
@@ -12,11 +22,17 @@
         <%= p.description %>
       </td>
       <td>
-        <%= p.created_at %>
+        <%= p.quantity %>
+      </td>
+      <td>
+        <%= p.price %>
       </td>
       <td>
         <%= link_to("Edit", edit_admin_product_path(p)) %>
         <%= link_to("delete", admin_product_path(p), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
+      </td>
+      <td>
+        <%= p.created_at %>
       </td>
     </tr>
   <% end %>
