@@ -2,7 +2,26 @@
   <h2>update product</h2>
   <hr>
   <%= simple_form_for [:admin,@product] do |f| %>
-    <div class="form-group">
+    <div class="group">
+      <%= f.input :title %>
+    </div>
+
+    <div class="group">
+      <%= f.input :description %>
+    </div>
+
+    <div class="group">
+      <%= f.input :quantity %>
+    </div>
+
+    <div class="group">
+      <%= f.input :price %>
+    </div>
+
+    <div class="group">
+      <%= f.input :image, as: :file %>
+    </div>
+    <!-- <div class="form-group">
       <%= f.input :title, input_html: { class: "form-control" } %>
       <%= f.input :description, input_html: { class: "form-control" } %>
       <%= f.input :price, input_html: { class: "form-control" } %>
@@ -14,7 +33,7 @@
       <% end %>
 
       <%= f.input :image, as: :file %>
-    </div>
+    </div> -->
     <%= f.submit "Create Product", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
   <% end %>
 </div>
