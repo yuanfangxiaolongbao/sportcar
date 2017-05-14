@@ -1,49 +1,47 @@
 <h2>Product List</h2>
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to(product.title, admin_product_path(product)) %></li>
-  <% end %>
-</ul>
 
-<div class="pull-right">
-  <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default") %>
+<div class="pull-right" style="padding-bottom: 20px">
+  <%= link_to("Add new product", new_admin_product_path, :class => "btn btn-default btn-sm") %>
 </div>
 <table class="table table-bordered">
-  <tr>
-    <th>#</th>
-    <th>品名</th>
-    <th>叙述</th>
-    <th>库存</th>
-    <th>价格</th>
-    <th>图片</th>
-    <th>选项</th>
-    <th>创建日期</th>
-  </tr>
-  <% @products.each do |p| %>
+  <thead>
     <tr>
       <th>#</th>
-      <td>
-        <%= link_to(p.title, admin_product_path(p)) %>
-      </td>
-      <td>
-        <%= p.description %>
-      </td>
-      <td>
-        <%= p.quantity %>
-      </td>
-      <td>
-        <%= p.price %>
-      </td>
-      <td>
-        <%= p.image %>
-      </td>
-      <td>
-        <%= link_to("Edit", edit_admin_product_path(p)) %>
-        <%= link_to("delete", admin_product_path(p), :method => :delete, :data => { :confirm => "Are you sure?" }) %>
-      </td>
-      <td>
-        <%= p.created_at %>
-      </td>
+      <th width="220">Product Pic</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th width="100">Options</th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @products.each do |p| %>
+      <tr>
+        <td>
+          <%= p.id %>
+        </td>
+        <td>
+          <%= link_to product_path(p) do %>
+            <% if p.image.present? %>
+              <%= image_tag(p.image.thumb.url, class: "thumbnail") %>
+            <% else %>
+              <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+            <% end %>
+          <% end %>
+        </td>
+        <td>
+          <%= p.title %>
+        </td>
+        <td>
+          <%= p.price %>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_product_path(p)) %>|
+          <%= link_to("Delete", admin_products_path(p), method: :delete, data: { confirm: "Are you sure?" } ) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+
+
 </table>
