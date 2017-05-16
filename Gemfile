@@ -47,7 +47,11 @@ gem 'font-awesome-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+
+  # 只要一个debug gem就可以，原生的注释掉
+  # gem 'byebug', platform: :mri
+  gem 'pry'
+  gem 'awesome_rails_console'
 end
 
 group :development do
