@@ -14,8 +14,13 @@ class CartItemsController < ApplicationController
   def update
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
-    @cart_item.update(cart_item_params)
-    binding.pry
+    if @cart_item.quantity > 0
+      @cart_item.update(cart_item_params)
+      flash[:notice] = "变更数量成功"
+    else
+      flash[:waring] = "数量不足以加入购物车"
+    end
+
     redirect_to carts_path
   end
 
