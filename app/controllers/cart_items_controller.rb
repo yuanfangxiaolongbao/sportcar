@@ -14,7 +14,7 @@ class CartItemsController < ApplicationController
   def update
     @cart = current_cart
     @cart_item = @cart.cart_items.find_by(product_id: params[:id])
-    if @cart_item.quantity > 0
+    if @cart_item.product.quantity >= cart_item_params[:quantity].to_i and  @cart_item.quantity > 0
       @cart_item.update(cart_item_params)
       flash[:notice] = "变更数量成功"
     else
