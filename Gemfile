@@ -45,6 +45,12 @@ gem "mini_magick"
 #
 gem 'font-awesome-rails'
 
+#邮件预览
+gem 'letter_opener', group: :development
+
+#有限状态机
+gem 'aasm'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 
