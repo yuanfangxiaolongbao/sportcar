@@ -33,9 +33,33 @@ gem 'jbuilder', '~> 2.5'
 #css 框架
 gem 'bootstrap-sass'
 
+
+#登录用户
+gem 'devise'
+
+#表格
+gem 'simple_form'
+
+#图片
+gem "carrierwave"
+gem "mini_magick"
+
+#
+gem 'font-awesome-rails'
+
+#邮件预览
+gem 'letter_opener', group: :development
+
+#有限状态机
+gem 'aasm'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+
+  # 只要一个debug gem就可以，原生的注释掉
+  # gem 'byebug', platform: :mri
+  gem 'pry'
+  gem 'awesome_rails_console'
 end
 
 group :development do
