@@ -205,15 +205,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-  bootstrap-sass
-  byebug
-=======
+
   aasm
   awesome_rails_console
   bootstrap-sass
   carrierwave
->>>>>>> pay
   coffee-rails (~> 4.2)
   devise
   font-awesome-rails
