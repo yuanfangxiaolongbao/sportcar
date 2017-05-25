@@ -2,7 +2,16 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search_word]
 
   def index
-    @products = Product.all
+    #@products = Product.all
+    @products = case params[:order]
+                when 'by_lower_price'
+                  Product.order('price')
+                when 'by_upper_price'
+                  Product.order('price DESC')
+                else
+                  Product.order('created_at DESC')
+                end
+
   end
 
   def show
