@@ -12,6 +12,18 @@
           <%= link_to("Products", products_path) %>
         </li>
       </ul>
+      <!--添加搜索框 -->
+      <div class="navbar-form navbar-left">
+        <%= form_tag search_word_products_path, method: :get, class: 'questions-search-form' do %>
+          <div class="form-group">
+            <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="输入关键字">
+          </div>
+          <button type="submit" class="btn btn-default">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        <% end %>
+      </div>
+
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   #root 'welcome#index'
   root 'products#index'
+
+#购物车下资源和操作
   resources :carts do
     collection do
       delete :clean
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
 
   resources :cart_items
 
+#管理员下的资源和操作
   namespace :admin do
     resources :products
     resources :orders do
@@ -24,12 +27,18 @@ Rails.application.routes.draw do
     end
   end
 
+#商品下的操作
   resources :products do
     member do
       post :add_to_cart
     end
+    collection do
+      #关键字查找
+      get :search_word
+    end
   end
 
+#订单下的操作
   resources :orders do
     member do
       post :pay_with_alipay
@@ -38,6 +47,7 @@ Rails.application.routes.draw do
     end
   end
 
+#用户下资源和操作
   namespace :account do
     resources :orders
   end

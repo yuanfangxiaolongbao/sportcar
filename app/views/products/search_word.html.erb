@@ -1,0 +1,35 @@
+<div>
+  <br>
+  <% if @query_string.blank? %>
+    <h3 class="search-info-title">
+      搜索信息不能为空，请输入关键字搜索
+    </h3>
+
+  <% elsif @products.blank? %>
+    <br>
+    <h3 class="search-info-title">sorry,没有找到"<%= @query_string %>"相关车</h3>
+  <% else %>
+    <h2 class="search-info-title"> 有关"<%= @query_string %>"的信息 </h2>
+
+      <div class="panel-body">
+        <table class="table table-boldered table-striped custab" >
+          <thead>
+            <tr>
+              <td>车</td>
+              <td>车描述</td>
+              <td>租用价格</td>
+              <td>刊登时间</td>
+            </tr>
+          </thead>
+            <% @products.each do |product| %>
+              <tr>
+                <td> <%= link_to(render_highlight_content(product, @query_string), product_path(product)) %> </td>
+                <td> <%= product.description %> </td>
+                <td> <%= product.price %> </td>
+                <td><%= product.created_at %></td>
+              </tr>
+            <% end %>
+        </table>
+      </div>
+<% end %>
+</div>

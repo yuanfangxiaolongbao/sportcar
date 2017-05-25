@@ -44,7 +44,7 @@ gem 'simple_form'
 gem "carrierwave"
 gem "mini_magick"
 
-#
+#小图标
 gem 'font-awesome-rails'
 
 #邮件预览
@@ -52,6 +52,12 @@ gem 'letter_opener', group: :development
 
 #有限状态机
 gem 'aasm'
+
+#搜索
+gem "ransack"
+
+#分页
+gem 'will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
