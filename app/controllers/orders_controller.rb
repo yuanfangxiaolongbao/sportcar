@@ -60,6 +60,7 @@ class OrdersController < ApplicationController
       @product.sale_quantity += product_list.quantity
       @product.quantity -= product_list.quantity
       @product.save
+    end
 
     redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
   end
