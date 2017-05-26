@@ -8,10 +8,11 @@ class ProductsController < ApplicationController
                   Product.order('price')
                 when 'by_upper_price'
                   Product.order('price DESC')
+                when 'by_upper_sale_quantity'
+                  Product.order('sale_quantity DESC')
                 else
                   Product.order('created_at DESC')
                 end
-
   end
 
   def show

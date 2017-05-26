@@ -11,6 +11,9 @@ class OrdersController < ApplicationController
       current_cart.cart_items.each do |cart_item|
         product_list = ProductList.new
         product_list.order = @order
+        #在购买明细中添加产品id
+        product_list.product_id = cart_item.product.id
+
         product_list.product_name = cart_item.product.title
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
@@ -35,6 +38,14 @@ class OrdersController < ApplicationController
     @order.set_payment_with!("alipay")
     @order.make_payment!
 
+    #订单付款后，产品的销量添加，库存数量减少
+    @order.product_lists.each do |product_list|
+      @product = Product.find_by(id: product_list.product_id)
+      @product.sale_quantity += product_list.quantity
+      @product.quantity -= product_list.quantity
+      @product.save
+    end
+
     redirect_to order_path(@order.token), notice: "使用支付宝成功完成付款"
   end
 
@@ -42,6 +53,13 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
     @order.set_payment_with!("wechat")
     @order.make_payment!
+
+    #订单付款后，产品的销量添加，库存数量减少
+    @order.product_lists.each do |product_list|
+      @product = Product.find_by(id: product_list.product_id)
+      @product.sale_quantity += product_list.quantity
+      @product.quantity -= product_list.quantity
+      @product.save
 
     redirect_to order_path(@order.token), notice: "使用微信成功完成付款"
   end
