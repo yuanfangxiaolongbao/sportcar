@@ -12,11 +12,13 @@ class OrdersController < ApplicationController
         product_list = ProductList.new
         product_list.order = @order
         #在购买明细中添加产品id
+
         product_list.product_id = cart_item.product.id
 
         product_list.product_name = cart_item.product.title
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
+        #binding.pry
         product_list.save
       end
       current_cart.clean!

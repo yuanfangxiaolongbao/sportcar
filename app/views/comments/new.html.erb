@@ -1,0 +1,9 @@
+<div class="col-md-12 ">
+  <h2>添加评论</h2>
+  <%= simple_form_for [@product,@comment] do |c| %>
+    <div class="form-group">
+      <%= c.input :description, input_html: { class: "form-control"} %>
+    </div>
+    <%= c.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+  <% end %>
+</div>

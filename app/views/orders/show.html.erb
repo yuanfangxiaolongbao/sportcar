@@ -6,8 +6,9 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th width="80%">商品明细</th>
-          <th>单价</th>
+          <th width="60%">商品明细</th>
+          <th width="20%">单价</th>
+          <th>操作</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +20,9 @@
             </td>
             <td>
               <%= product_list.product_price %>
+            </td>
+            <td>
+              <%= link_to("评论这个商品", new_product_comment_path(Product.find_by(id: product_list.product_id)) ) %>
             </td>
           </tr>
         <% end %>

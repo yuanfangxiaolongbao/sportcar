@@ -29,6 +29,8 @@ Rails.application.routes.draw do
 
 #商品下的操作
   resources :products do
+    #评论资源
+    resources :comments
     member do
       post :add_to_cart
     end

@@ -21,7 +21,18 @@
       <% else %>
         已销售空，无法购买
       <% end %>
+    </div>
 
+    <div class="col-md-12">
+      <% if @product.comments.present? %>
+        <% @product.comments.each do |comment| %>
+          用户：<%= comment.user_id  %>
+          说：<%= comment.description  %>
+          <hr>
+        <% end %>
+      <% else %>
+      还没有用户发表评论～
+      <% end %>
     </div>
   </div>
 </div>
