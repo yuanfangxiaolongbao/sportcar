@@ -1,6 +1,11 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @product = Product.find(params[:product_id])
+    @comments = @product.comments.paginate(:page => params[:page], :per_page => 5)
+  end
+
   def new
     @product = Product.find(params[:product_id])
     #binding.pry

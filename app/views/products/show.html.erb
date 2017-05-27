@@ -13,26 +13,41 @@
         <%= @product.description %>
       </p>
     </div>
-    <div> 数量：<%= @product.quantity %> </div>
-    <div class="product-price"> ¥ <%= @product.price %></div>
-    <div class="pull-right">
-      <% if @product.quantity.present? && @product.quantity > 0 %>
-        <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger btn-lg") %>
+    <div style="height:250px;">
+      <div> 库存：<%= @product.quantity %> </div>
+      <div class="product-price"> ¥ <%= @product.price %></div>
+      <div class="pull-right">
+        <% if @product.quantity.present? && @product.quantity > 0 %>
+          <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger btn-lg") %>
+        <% else %>
+          已销售空，无法购买
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <!-- 显示评论数 -->
+    <div class="col-md-12 col-sm-offset-1">
+      <h3>产品评论：</h3>
+      <!-- 产品有评论 -->
+      <% if @product.comments.present? %>
+      <!-- 产品评论超过5条，在另一个页面显示评论 -->
+        <% if @product.comments.length > 5 %>
+          <%= link_to("评论超过5条，查看所有评论", product_comments_path(@product)) %>
+        <% else %>
+        <!-- 产品评论小于5条，在当前页面显示评论 -->
+          <% @product.comments.each do |comment| %>
+            <div style="color: orange;">
+              用户：<%= User.find_by(id: comment.user_id ).email %>说：
+            </div>
+              <%= comment.description  %>
+            <hr>
+          <% end %>
+        <% end %>
+      <!-- 没有评论的提示 -->
       <% else %>
-        已销售空，无法购买
+        <br>还没有用户发表评论～
       <% end %>
     </div>
 
-    <div class="col-md-12">
-      <% if @product.comments.present? %>
-        <% @product.comments.each do |comment| %>
-          用户：<%= comment.user_id  %>
-          说：<%= comment.description  %>
-          <hr>
-        <% end %>
-      <% else %>
-      还没有用户发表评论～
-      <% end %>
-    </div>
   </div>
-</div>
