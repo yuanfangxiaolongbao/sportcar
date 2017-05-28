@@ -1,0 +1,15 @@
+<div class="col-md-12 ">
+  <h2>new category</h2>
+  <hr>
+  <%= simple_form_for [:admin, @category] do |f| %>
+
+    <div class="group">
+      <%= f.input :name %>
+    </div>
+
+    <div class="group">
+      <%= f.input :desc %>
+    </div>
+    <%= f.submit "Create Category", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+  <% end %>
+</div>

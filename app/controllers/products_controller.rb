@@ -3,16 +3,24 @@ class ProductsController < ApplicationController
 
   def index
     #@products = Product.all
-    @products = case params[:order]
-                when 'by_lower_price'
-                  Product.order('price')
-                when 'by_upper_price'
-                  Product.order('price DESC')
-                when 'by_upper_sale_quantity'
-                  Product.order('sale_quantity DESC')
-                else
-                  Product.order('created_at DESC')
-                end
+    #按照是否需要分类查找区分
+    if params[:category].blank?
+      @products = case params[:order]
+                  when 'by_lower_price'
+                    Product.order('price')
+                  when 'by_upper_price'
+                    Product.order('price DESC')
+                  when 'by_upper_sale_quantity'
+                    Product.order('sale_quantity DESC')
+                  else
+                    Product.order('created_at DESC')
+                  end
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @products = Product.where(category_id: @category_id)
+    end
+
+
   end
 
   def show
@@ -32,7 +40,6 @@ class ProductsController < ApplicationController
   end
 
   def search_word
-    #binding.pry
     if @query_string.present?
       search_result = Product.ransack(@search_criteria).result(:distinct => true)
       @products = search_result.paginate(:page => params[:page], :per_page => 5)

@@ -18,7 +18,6 @@ class OrdersController < ApplicationController
         product_list.product_name = cart_item.product.title
         product_list.product_price = cart_item.product.price
         product_list.quantity = cart_item.quantity
-        #binding.pry
         product_list.save
       end
       current_cart.clean!

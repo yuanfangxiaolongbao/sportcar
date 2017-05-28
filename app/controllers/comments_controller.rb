@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
 
   def new
     @product = Product.find(params[:product_id])
-    #binding.pry
     @comment = Comment.new
   end
 
