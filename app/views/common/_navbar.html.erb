@@ -2,16 +2,24 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">JDStore</a>
+      <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' >SurperCar</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active">
+        <li >
           <%= link_to("Products", products_path) %>
         </li>
       </ul>
+
+      <!--马上约车 -->
+      <ul class="nav navbar-nav">
+        <li >
+          <%= link_to("马上约车", products_path) %>
+        </li>
+      </ul>
+
       <!--添加搜索框 -->
       <div class="navbar-form navbar-left">
         <%= form_tag search_word_products_path, method: :get, class: 'questions-search-form' do %>

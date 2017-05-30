@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  #root 'welcome#index'
-  root 'products#index'
+  root 'welcome#index'
+  ##root 'products#index'
 
 #购物车下资源和操作
   resources :carts do

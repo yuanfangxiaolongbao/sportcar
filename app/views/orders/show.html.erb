@@ -22,11 +22,10 @@
               <%= product_list.product_price %>
             </td>
             <td>
-              <%= link_to("评论这个商品", new_product_comment_path(Product.find_by(id: product_list.product_id)) ) %>
+              <%= link_to("评论这个商品", new_product_comment_path(product_list.product_id) ) %>
             </td>
           </tr>
         <% end %>
-
       </tbody>
     </table>
 

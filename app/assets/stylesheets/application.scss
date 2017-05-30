@@ -17,3 +17,339 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+ //---------Navbar---------
+ .navbar-default {
+     background-color: #212121;//背景色
+     border-color: #212121; //边框色
+     margin-bottom: 0;//底部外边框无
+     border-radius: 0;//向 div元素添加圆角边框
+ }
+
+ .navbar-default .navbar-brand {
+     color: #FF5722;//字体颜色
+     padding: 10px 15px;//那边框上下10px，左右15px
+     line-height: 30px;//文字行高
+ }
+
+ .navbar-default .navbar-brand:hover,
+ .navbar-default .navbar-brand:focus {
+     color: #FF5722;//鼠标放在导航链接上文字颜色
+     background-color: transparent;//鼠标放在导航链接上背景颜色，设为透明，focus是选择器，选择获得焦点的 input 元素
+ }
+
+ .navbar-default .navbar-nav > li > a {
+     color: #FF5722;//导航下每个li的颜色
+ }
+
+ .navbar-default .navbar-nav > li > a:hover,
+ .navbar-default .navbar-nav > li > a:focus {
+     color: #FF5722;//鼠标放在li上链接上文字颜色
+     background-color: transparent;//鼠标放在li上链接上背景颜色
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+     color: #FF6F00;//.active选择器用于设置活动链接字体颜色
+     background-color: #FFE0B2;//.active选择器用于设置活动链接背景颜色
+ }
+
+ .navbar-default .navbar-nav > .open > a,
+ .navbar-default .navbar-nav > .open > a:focus,
+ .navbar-default .navbar-nav > .open > a:hover {
+     background-color: #FFE0B2;
+     color: #212121;
+ }
+
+//导航栏图片设计
+ .navbar-brand > img {
+    display: inline-block;	//图片和链接文字显示在同一行
+    margin-right: 10px; //图片和链接文字拉开一点距离，设置外边框右边距
+    width: 32px; //定制图片宽度
+    height: 32px; //定制图片高度
+}
+
+//---------Box---------
+ .box {
+      background-image: url("header.jpg");//背景图片
+      background-repeat: no-repeat;//是否设置重复背景，不重复
+      background-size: cover;//会保持图像本身的宽高比例，将图片缩放到正好完全覆盖定义背景的区域
+      margin-bottom: 50px;//底部外边框50px
+
+      .box-inner {
+          background-color: rgba(250, 250, 250, 0);//背景颜色以及透明度
+          padding-bottom: 5px;//底部内边距
+          margin-top: 150px;//顶部外边距
+          margin-bottom: 150px;//底部外边距
+      }
+
+      .title {
+          text-align: center;//文本居中
+          margin-bottom: 80px;//底部外边距
+          color: #E1F5FE; //文案颜色
+      }
+
+      .slogan {
+          color: #E1F5FE; //文案颜色
+          margin-top: 10px; //顶部外边距
+          margin-bottom: 50px; //底部外边距
+          text-align: center; //文本居中
+          font-size: 25px; //字体大小
+          top: 12px;//规定元素的顶部边缘。定义一个定位元素的上外边距边界与其包含块上边界之间的偏移?
+
+      }
+
+      .lead {
+          margin-bottom: 10px;//底部外边距
+          text-align: center;//底部外边距
+          color: white;//文案颜色
+      }
+  }
+
+//---------content---------
+
+//content-a,介绍
+.content-a {
+    height: 580px;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.content-a > text-center{
+  margin-bottom: 20px;
+}
+
+.content-a > text-center > img{
+    width: 660px;//定制图片宽度
+    height: 32px; //定制图片高度
+    clear: both; //下面三行都是设置图片居中
+    clear: both;
+    display: block;
+    margin:auto;
+    margin-top: 50px;
+    background-color: #37474F
+}
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+
+h1, h2,  h3, {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+
+//今日推荐
+.content-b {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    //background-color: #78909C;
+}
+
+.topspan {
+    margin-top: 2em;
+}
+
+.titspan {
+    font-weight: 400;
+}
+
+//三图显示
+.box-recommend{
+  height: 200px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+}
+
+//图片居中
+img{
+  clear: both;
+  display: block;
+  margin:auto;
+}
+
+.box-recommend-listitem-1{
+  width: auto;
+  border: 1px solid #d8d8d8;
+  padding: 25px 16px 0;
+  float: left;
+  margin-right: 55px;
+  margin-left: 45px;
+  padding-bottom: 20px;
+  //padding-left: 15px;
+  //background-color: #000000;
+}
+.box-recommend-listitem-2{
+  width: auto;
+  border: 1px solid #d8d8d8;
+  padding: 25px 16px 0;
+  float: right;
+  margin-right: 55px;
+  margin-left: 45px;
+  padding-bottom: 20px;
+  //padding-left: 15px;
+  // width:auto;
+  // height:200px;
+  // border-style: groove;
+  // border-color: black;
+  // float:left;
+  // margin-right: 20px;
+}
+.box-recommend-listitem-3{
+  width: auto;
+  border: 1px solid #d8d8d8;
+  padding: 25px 16px 0;
+  float: left;
+  margin-right: 44px;
+  margin-left: 30px;
+  padding-bottom: 20px;
+  padding-left: 15px;
+  // width:auto;
+  // height:200px;
+  // border-style: groove;
+  // border-color: black;
+  // float:left;
+}
+
+//商品列表
+.content-c{
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    //background-color: #78909C;
+}
+.col-xs-6 {
+    width: 50%;
+    float: left;
+}
+
+.col-md-3 {
+    width: 25%;
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.product-list-style {
+    margin: 3em auto 2em;
+}
+
+
+//---------bottom content---------
+.lp-section-bottom{
+   background: linear-gradient(rgba(12,12,9,0.4), rgba(12,12,9,0.4)),url("bottom.jpg");
+   background-position: center 60%;//设置背景图片的起始位置
+   background-size: cover;//会保持图像本身的宽高比例，将图片缩放到正好完全覆盖定义背景的区域
+   margin-left: auto;//左外边距，自动
+   margin-right: auto;//右外边距，自动
+   margin-bottom: 0;//底部外边距，无
+   width: 100%;//设置元素的高度
+   min-width: 960px;//最小宽度
+   height: 200px;//高度设置
+   position: relative//属性规定元素的相对
+}
+
+.action-btn {
+   box-sizing: border-box;//为元素设定的宽度和高度决定了元素的边框盒
+   cursor: pointer;//光标呈现为指示链接的指针
+   margin: 0 auto;
+   border-radius: 0.2em;
+   text-align: center;
+   font-size: 1.428em;
+   text-transform: uppercase;
+   letter-spacing: 0.3em;
+   padding: 0.57em 1.9em;
+   margin-top: 2.85em;
+   text-align: center;
+   text-overflow: clip;
+   letter-spacing: 2px;
+   color: white;
+   background: #1ecd97;
+   border: 2px solid #1ecd97;
+   transition: background-color 0.3s
+}
+
+
+.lp-section-bottom .bottom-content p {
+   color: white;
+   font-size: 1.4em;
+   margin-bottom: 60px;
+   letter-spacing: 3px;
+}
+
+.lp-section-bottom .bottom-content {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 700px;
+   height: 200px;
+   position: relative;
+   text-align: center;
+   padding-top: 40px;
+}
+
+
+//---------Footer---------
+.footer {
+  //position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 25px;
+  /* Set the fixed height of the footer here */
+  height: 150px;
+  background-color: #233140;
+  color: white;
+  text-align: center;
+
+  .footer-content {
+    text-align: left !important;
+    margin-left: 50px;
+  }
+
+  .footer > .img {
+    margin: 5px;
+    text-align: left
+  }
+
+  .footerlist{
+    //margin-left: 30px;
+    margin-bottom: 30px;
+  }
+
+//最后一个div需要左对齐
+  .left_text{
+    text-align: left
+  }
+
+  .footer >.row {
+    margin-top: 30px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+}
