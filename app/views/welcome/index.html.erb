@@ -35,24 +35,27 @@
       <div class="col-md-12">
         <h3 class="titspan"> 今日推荐 </h3>
       </div>
+      <!-- <div class="col-md-12" style="text-align:center;">
+        <hr/>
+      </div> -->
       <!-- 三图显示 -->
       <div class="box-recommend">
-        <div class="col-md-3 box-recommend-listitem-1">
-          <img src="https://ooo.0o0.ooo/2017/05/30/592d266f6ac9f.jpg" alt="推荐1">
-          <br>
-          <span>超跑1.。。</span>
+        <% @products_recommend.each do |product| %>
+          <div class="col-md-3 box-recommend-listitem">
+            <div>
+              <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="product-list-info">
+              <%= product.title %>
+            </div>
         </div>
-        <div class="col-md-3 box-recommend-listitem-2">
-          <img src="https://ooo.0o0.ooo/2017/05/30/592d266f6ac9f.jpg" alt="推荐1">
-          <br>
-          <span>超跑1.。。</span>
-        </div>
-        <div class="col-md-3 box-recommend-listitem-3">
-          <img src="https://ooo.0o0.ooo/2017/05/30/592d266f6ac9f.jpg" alt="推荐1">
-          <br>
-          <span>超跑1.。。</span>
-        </div>
-
+      <% end %>
       </div>
     </div>
   </div>
@@ -65,65 +68,27 @@
       <div class="col-md-12">
         <h3 class="titspan"> 热销商品 </h3>
       </div>
-      <!-- <div class="col-md-6">
-        <h3 class="titspan"> 更多... </h3>
-      </div> -->
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-          <a target="_blank" href="/products/1"><img class="product-list-style-img img-responsive center-block" src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="Thumb img03"></a>
-          <br>
-          <a target="_blank" href="/products/1">宝马1</a>
-          <br>
-          <strong>￥ <a target="_blank" href="/products/1">500</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-          <a target="_blank" href="/products/1"><img class="product-list-style-img img-responsive center-block" src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="Thumb img03"></a>
-          <br>
-          <a target="_blank" href="/products/1">宝马1</a>
-          <br>
-          <strong>￥ <a target="_blank" href="/products/1">500</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-          <a target="_blank" href="/products/1"><img class="product-list-style-img img-responsive center-block" src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="Thumb img03"></a>
-          <br>
-          <a target="_blank" href="/products/1">宝马1</a>
-          <br>
-          <strong>￥ <a target="_blank" href="/products/1">500</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-          <a target="_blank" href="/products/1"><img class="product-list-style-img img-responsive center-block" src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="Thumb img03"></a>
-          <br>
-          <a target="_blank" href="/products/1">宝马1</a>
-          <br>
-          <strong>￥ <a target="_blank" href="/products/1">500</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-          <a target="_blank" href="/products/1"><img class="product-list-style-img img-responsive center-block" src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="Thumb img03"></a>
-          <br>
-          <a target="_blank" href="/products/1">宝马1</a>
-          <br>
-          <strong>￥ <a target="_blank" href="/products/1">500</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-          <a target="_blank" href="/products/1"><img class="product-list-style-img img-responsive center-block" src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="Thumb img03"></a>
-          <br>
-          <a target="_blank" href="/products/1">宝马1</a>
-          <br>
-          <strong>￥ <a target="_blank" href="/products/1">500</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-          <a target="_blank" href="/products/1"><img class="product-list-style-img img-responsive center-block" src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="Thumb img03"></a>
-          <br>
-          <a target="_blank" href="/products/1">宝马1</a>
-          <br>
-          <strong>￥ <a target="_blank" href="/products/1">500</a></strong><p></p>
-      </div>
-      <div class="col-xs-6 col-md-3 text-center product-list-style">
-          <a target="_blank" href="/products/1"><img class="product-list-style-img img-responsive center-block" src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="Thumb img03"></a>
-          <br>
-          <a target="_blank" href="/products/1">宝马1</a>
-          <br>
-          <strong>￥ <a target="_blank" href="/products/1">500</a></strong><p></p>
-      </div>
+
+      <div class='row product-list-all'>
+        <% @products.each do |product| %>
+          <div class="col-xs-6 col-md-3">
+            <div>
+              <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="product-list-info">
+              <%= product.title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <br>
+              价格：$<%= product.price %>
+            </div>
+        </div>
+      <% end %>
+     </div>
     </div>
   </div>
 </div>

@@ -148,9 +148,9 @@
     margin-right: -15px;
 }
 
-.text-center {
-    text-align: center;
-}
+// .text-center {
+//     text-align: center;
+// }
 
 
 h1, h2,  h3, {
@@ -175,6 +175,8 @@ h1, h2,  h3, {
 
 .titspan {
     font-weight: 400;
+    margin-left: 10px;
+    margin-bottom: 20px;
 }
 
 //三图显示
@@ -182,6 +184,7 @@ h1, h2,  h3, {
   height: 200px;
   margin-bottom: 40px;
   padding-bottom: 20px;
+  margin-left: 20px;
 }
 
 //图片居中
@@ -191,47 +194,16 @@ img{
   margin:auto;
 }
 
-.box-recommend-listitem-1{
+.box-recommend-listitem{
   width: auto;
   border: 1px solid #d8d8d8;
-  padding: 25px 16px 0;
+  padding: 32px 5px 0;
   float: left;
-  margin-right: 55px;
-  margin-left: 45px;
-  padding-bottom: 20px;
+  margin-right: 50px;
+  margin-left: 40px;
+  padding-bottom: 10px;
   //padding-left: 15px;
   //background-color: #000000;
-}
-.box-recommend-listitem-2{
-  width: auto;
-  border: 1px solid #d8d8d8;
-  padding: 25px 16px 0;
-  float: right;
-  margin-right: 55px;
-  margin-left: 45px;
-  padding-bottom: 20px;
-  //padding-left: 15px;
-  // width:auto;
-  // height:200px;
-  // border-style: groove;
-  // border-color: black;
-  // float:left;
-  // margin-right: 20px;
-}
-.box-recommend-listitem-3{
-  width: auto;
-  border: 1px solid #d8d8d8;
-  padding: 25px 16px 0;
-  float: left;
-  margin-right: 44px;
-  margin-left: 30px;
-  padding-bottom: 20px;
-  padding-left: 15px;
-  // width:auto;
-  // height:200px;
-  // border-style: groove;
-  // border-color: black;
-  // float:left;
 }
 
 //商品列表
@@ -352,4 +324,46 @@ img{
     margin-left: 100px;
     margin-right: 100px;
   }
+
+  .footer-below {
+     padding: 25px 0;
+     background-color: #233140;
+ }
+}
+
+
+//-----------**************______________
+//---产品列表页----
+.product-style{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+//“商品”标题格式
+.product-title{
+  margin-left: 30px;
+}
+
+//"排序"格式
+.dropdown-style{
+  margin-right: 20px;
+  float:right;
+  padding:20px;
+}
+
+//商品列表
+.product-list-all{
+  margin-top: 20px;
+}
+
+//商品列表信息
+.product-list-info{
+  margin: 10px 50px ;
+}
+
+//-----------**************______________
+//----产品详情页-----
+.product-info{
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
