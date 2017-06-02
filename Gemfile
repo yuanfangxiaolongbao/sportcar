@@ -59,6 +59,10 @@ gem "ransack"
 #分页
 gem 'will_paginate'
 
+#七牛云
+gem 'carrierwave-qiniu'
+gem 'qiniu-rs'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
 
