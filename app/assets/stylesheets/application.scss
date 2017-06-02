@@ -18,6 +18,11 @@
  @import "bootstrap";
  @import "font-awesome";
 
+body{
+  // min-width: 1200px; //屏幕最小宽度
+  // overflow: auto; //如果内容被修剪，则浏览器会显示滚动条以便查看其余的内容
+  font-family: "微软雅黑";
+}
  //---------Navbar---------
  .navbar-default {
      background-color: #212121;//背景色
@@ -72,7 +77,8 @@
 
 //---------Box---------
  .box {
-      background-image: url("header.jpg");//背景图片
+      background-image: url("https://ooo.0o0.ooo/2017/05/31/592ed9ee3cebb.jpg");//背景图片
+      background-position: center 60%;//取图的位置
       background-repeat: no-repeat;//是否设置重复背景，不重复
       background-size: cover;//会保持图像本身的宽高比例，将图片缩放到正好完全覆盖定义背景的区域
       margin-bottom: 50px;//底部外边框50px
@@ -161,8 +167,10 @@ h1, h2,  h3, {
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
-    margin-bottom: 20px;
-    //background-color: #78909C;
+    //margin-bottom: 20px;
+    background-color: #000000;
+    //height: 400px;
+    color: #FF5722;
 }
 
 .topspan {
@@ -175,12 +183,35 @@ h1, h2,  h3, {
     margin-bottom: 20px;
 }
 
-//三图显示
+//猜你喜欢
+
 .box-recommend{
-  height: 200px;
+  //height: 200px;
   margin-bottom: 40px;
   padding-bottom: 20px;
   margin-left: 20px;
+}
+.box-recommend > .box-item {
+  height: auto;//180px;
+  //border: solid 1px #eee;
+  box-sizing: border-box;
+}
+.box-item .header {
+  height: 100px;
+  display: flex;
+}
+.box-item .icon {
+  width: 120px;
+  height: 80px;
+  margin: 7px 10px ;
+}
+.box-item .info {
+  margin-left: 10px;
+  flex: 1;
+}
+.box-item .desc {
+  height: 60px;
+  margin-top: 10px;
 }
 
 //图片居中
@@ -192,12 +223,13 @@ img{
 
 .box-recommend-listitem{
   width: auto;
-  border: 1px solid #d8d8d8;
-  padding: 32px 0px 10px;
+  //border: 1px solid #d8d8d8;
+  padding: 32px 20px 0px;
   float: left;
-  margin-right: 50px;
-  margin-left: 40px;
+  margin-right: 10px;
+  margin-left: 30px;
 }
+
 
 //商品列表
 .content-c{
@@ -205,8 +237,9 @@ img{
     margin-left: auto;
     padding-left: 15px;
     padding-right: 15px;
-    margin-bottom: 20px;
-    //background-color: #78909C;
+    //margin-bottom: 20px;
+    background-color: #000000;
+    color: #FF5722;
 }
 .col-xs-6 {
     width: 50%;
@@ -225,25 +258,92 @@ img{
     margin: 3em auto 2em;
 }
 
+//-------听他说----------
+//整个div演示
+.titspan-say{
+  margin-left: 30px;
+  margin-bottom: 25px;
+}
+
+.he-say{
+  display: block;
+  width: 100%;
+  height: 400px;
+  min-width: 960px;
+  background-color: #f2f2f2;
+}
+
+.he-say > .content{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  height: 450px;
+  padding: 50px 0;
+  position: relative;
+}
+
+.he-say > .content > .content-left{
+  padding-left: 30px;
+  float: left;
+  width: 580px;
+}
+
+.he-say > .content > .content-left > .img{
+  float: left;
+  width: 90px;
+  text-align: center;
+}
+.he-say > .content > .content-left > >.content-info> .name{
+  float: left;
+  width: auto;
+  padding: 0 20px;
+}
+
+//合作品牌
+.titspan-brand{
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+.content-d{
+  height: 400px;
+}
+
+.brand-img{
+  //background-image: url("https://ooo.0o0.ooo/2017/06/01/592fa698b0dd4.jpeg");
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle;
+}
+
+// .box-item .icon {
+//   width: 100px;
+//   height: 100px;
+//   margin: 10px 10px;
+// }
 
 //---------bottom content---------
 .lp-section-bottom{
-   background: linear-gradient(rgba(12,12,9,0.4), rgba(12,12,9,0.4)),url("bottom.jpg");
-   background-position: center 60%;//设置背景图片的起始位置
+   background: linear-gradient(rgba(12,12,9,0.4), rgba(12,12,9,0.4)),url("https://ooo.0o0.ooo/2017/06/01/592fb1279b367.jpg
+");
+   background-position: center 50%;//设置背景图片的起始位置
    background-size: cover;//会保持图像本身的宽高比例，将图片缩放到正好完全覆盖定义背景的区域
    margin-left: auto;//左外边距，自动
    margin-right: auto;//右外边距，自动
    margin-bottom: 0;//底部外边距，无
    width: 100%;//设置元素的高度
    min-width: 960px;//最小宽度
-   height: 200px;//高度设置
-   position: relative//属性规定元素的相对
+   height: 240px;//高度设置
+   position: relative;//属性规定元素的相对
+   margin-top: 50px;
 }
 
 .action-btn {
    box-sizing: border-box;//为元素设定的宽度和高度决定了元素的边框盒
    cursor: pointer;//光标呈现为指示链接的指针
-   margin: 0 auto;
+   margin: 10px auto 0;
    border-radius: 0.2em;
    text-align: center;
    font-size: 1.428em;
@@ -254,9 +354,9 @@ img{
    text-align: center;
    text-overflow: clip;
    letter-spacing: 2px;
-   color: white;
-   background: #1ecd97;
-   border: 2px solid #1ecd97;
+   color: #FF5722;
+   background: #37474F;
+   border: 2px solid #37474F;
    transition: background-color 0.3s
 }
 
@@ -287,7 +387,7 @@ img{
   width: 100%;
   padding-top: 25px;
   /* Set the fixed height of the footer here */
-  height: 150px;
+  // height: 200px;
   background-color: #233140;
   color: white;
   text-align: center;
@@ -317,11 +417,10 @@ img{
     margin-left: 100px;
     margin-right: 100px;
   }
-
-  .footer-below {
-     padding: 25px 0;
-     background-color: #233140;
- }
+ //
+ //  .footer-below {
+ //    border-top: 1px solid #000000;
+ // }
 }
 
 
@@ -346,12 +445,13 @@ img{
 
 //商品列表
 .product-list-all{
-  margin-top: 20px;
+  margin: 20px 7px;
+
 }
 
 //商品列表信息
 .product-list-info{
-  margin: 10px 50px ;
+  margin: 10px 15px ;
 }
 
 //-----------**************______________
@@ -359,4 +459,14 @@ img{
 .product-info{
   margin-top: 20px;
   margin-bottom: 30px;
+}
+
+.add-cart-btn{
+  margin-top: 130px;
+  margin-right: 80px;
+}
+
+.comments-list{
+  margin-left: 40px;
+  margin-bottom: 20px;
 }

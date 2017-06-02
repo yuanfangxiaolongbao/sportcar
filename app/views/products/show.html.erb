@@ -14,9 +14,10 @@
       </p>
     </div>
     <div style="height:250px;">
-      <div> 库存：<%= @product.quantity %> </div>
-      <div class="product-price"> ¥ <%= @product.price %></div>
-      <div class="pull-right">
+      <div> 已付款：<%= @product.sale_quantity %>次</div>
+      <p></p>
+      <div class="product-price">¥<%= @product.price %> 元/天 </div>
+      <div class="pull-right add-cart-btn">
         <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product), :method => :post, :class => "btn btn-danger btn-lg") %>
         <% else %>
@@ -27,7 +28,7 @@
   </div>
 
   <!-- 显示评论数 -->
-    <div class="col-md-12 col-sm-offset-1">
+    <div class="col-md-12 comments-list">
       <h3>产品评论：</h3>
       <!-- 产品有评论 -->
       <% if @product.comments.present? %>

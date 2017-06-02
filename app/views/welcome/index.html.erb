@@ -18,30 +18,114 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <h3 class="text-align ">让超跑不再离普通人遥远</h3>
-        <p class="col-md-6 col-md-offset-3 text-center tagp">
-          “让爱超跑的人，都可以有机会体验超跑的速度和激情”
+        <p class="text-center">
+          “让爱超跑的人，都可以有机会体验超跑的速度和激情” <br>
           拥有超跑可能对于普通都只是遥远的梦想，superCar让你只要用几百块钱就可以体验。
         </p>
-        <img src="https://ooo.0o0.ooo/2017/05/30/592d395dbaa25.jpg" alt="轮胎">
+        <img src="https://ooo.0o0.ooo/2017/06/02/59305be80cdf9.jpg" alt="轮胎">
       </div>
     </div>
   </div>
 </div>
 
-<!-- 今日推荐 -->
+<!-- 猜你喜欢 -->
+<!-- <div class="row">
+  <div class="content-b topspan">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="titspan"> 猜你喜欢 </h3>
+      </div>
+      <div class="box-recommend">
+        <% @products_recommend.each do |product| %>
+          <div class="col-md-4 box-recommend-listitem">
+            <div>
+              <%= link_to product_path(product) do %>
+                <% if product.image.present? %>
+                  <%= image_tag(product.image.thumb.url, class: "thumbnail") %>
+                <% else %>
+                  <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="product-list-info">
+              <%= product.title %>
+            </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- 加分割线 -->
+<div class="">
+  <!-- <hr style="height:1px;border:none;border-top:1px solid #000000;" /> -->
+  <hr style="border-top: 1px solid rgba(74,74,74,0.29);"/>
+</div>
+
+
+<!-- 听他说 -->
+<div class="row">
+  <div class="content-b1">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="titspan-say"> 听他们说 </h3>
+      </div>
+      <div class="box-recommend">
+        <div class="box-item col-md-4">
+          <div class="header">
+            <img class="icon" src="https://ooo.0o0.ooo/2017/06/01/59301ac016a8a.jpeg" alt="">
+            <div class="info">
+              <h4> 舒马赫 </h4>
+              车王 最伟大的F1车手之一
+            </div>
+          </div>
+          <div class="desc">
+            &nbsp只有体验过，你才会真正认识大马力、大扭矩、<br>
+            高转速的发动机是如何
+          </div>
+        </div>
+        <div class="box-item col-md-4">
+          <div class="header">
+            <img class="icon" src="https://ooo.0o0.ooo/2017/06/01/593023edcf709.jpeg" alt="">
+            <div class="info">
+              <h4> 韩寒 </h4>
+              作家 赛车手
+            </div>
+          </div>
+          <div class="desc">
+            &nbsp只有体验过，你才会真正认识大马力、大扭矩、<br>
+            高转速的发动机是如何
+          </div>
+        </div>
+        <div class="box-item col-md-4">
+          <div class="header">
+            <img class="icon" src="https://ooo.0o0.ooo/2017/06/01/59302a0d2b8da.jpg" alt="">
+            <div class="info">
+              <h4> 陈震 </h4>
+              二环十三郎
+            </div>
+          </div>
+          <div class="desc">
+            &nbsp只有体验过，你才会真正认识大马力、大扭矩、<br>
+            高转速的发动机是如何
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 猜你喜欢 -->
 <div class="row">
   <div class="content-b topspan">
     <div class="row">
       <div class="col-md-12">
-        <h3 class="titspan"> 今日推荐 </h3>
+        <h3 class="titspan"> 猜你喜欢 </h3>
       </div>
-      <!-- <div class="col-md-12" style="text-align:center;">
-        <hr/>
-      </div> -->
-      <!-- 三图显示 -->
       <div class="box-recommend">
-        <% @products_recommend.each do |product| %>
-          <div class="col-md-3 box-recommend-listitem">
+        <% @products.each do |product| %>
+          <div class="col-md-4 box-recommend-listitem">
             <div>
               <%= link_to product_path(product) do %>
                 <% if product.image.present? %>
@@ -61,14 +145,14 @@
   </div>
 </div>
 
-<!-- 产品列表 -->
-<div class="row">
+
+<!-- 热销商品-->
+<!-- <div class="row">
   <div class="content-c topspan">
     <div class="row">
       <div class="col-md-12">
         <h3 class="titspan"> 热销商品 </h3>
       </div>
-
       <div class='row product-list-all'>
         <% @products.each do |product| %>
           <div class="col-xs-6 col-md-3">
@@ -89,6 +173,49 @@
         </div>
       <% end %>
      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- 合作品牌 -->
+<div class="row">
+  <div class="content-d">
+    <div class="row">
+      <div class="">
+        <h3 class="titspan-brand"> 合作品牌 </h3>
+      </div>
+      <hr style="border-top: 0px solid rgba(74,74,74,0.29);"/>
+
+      <div class="col-md-12 brand-img">
+        <div class="col-md-2">
+          <img src="https://ooo.0o0.ooo/2017/06/02/5930bc11ce5a6.jpg" alt="图标1">
+        </div>
+        <div class="col-md-2">
+          <img src="https://ooo.0o0.ooo/2017/06/02/5930eeb4c25b0.jpg" alt="图标2">
+        </div>
+        <div class="col-md-2">
+          <img src="https://ooo.0o0.ooo/2017/06/02/5930e9869c488.jpeg" alt="图标3">
+        </div>
+        <div class="col-md-2">
+          <img src="https://ooo.0o0.ooo/2017/06/02/5930ec5d2aa78.jpeg" alt="图标4">
+        </div>
+
+      </div>
+      <div class="col-md-12 brand-img">
+        <div class="col-md-2">
+          <img src="https://ooo.0o0.ooo/2017/06/02/5930e71718871.jpg" alt="图标5">
+        </div>
+        <div class="col-md-2">
+          <img src="https://ooo.0o0.ooo/2017/06/02/5930eceb4deb3.jpeg" alt="图标6">
+        </div>
+        <div class="col-md-2">
+          <img src="https://ooo.0o0.ooo/2017/06/02/5930bd6f9b562.jpeg" alt="图标7">
+        </div>
+        <div class="col-md-2">
+          <img src="https://ooo.0o0.ooo/2017/06/02/5930e7bc3c201.jpeg" alt="图标8">
+        </div>
+      </div>
     </div>
   </div>
 </div>
