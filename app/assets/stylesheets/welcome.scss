@@ -1,3 +1,228 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+//---------产品列表---------
+
+.bg-1 {
+    background: #2d2d30;
+    color: #bdbdbd;
+}
+.bg-1 h3 {
+   color: #fff;
+   text-align: center;
+}
+
+.thumbnail p {
+    margin-top: 15px;
+    color: #555;
+    text-align: center;
+}
+
+.btn-welcome:hover, .btn:focus {
+    border: 1px solid #333;
+    background-color: #fff;
+    color: #000;
+
+}
+
+
+
+
+
+
+
+/* Remove rounded borders from list */
+// .list-group-item:first-child {
+//     border-top-right-radius: 0;
+//     border-top-left-radius: 0;
+// }
+//
+// .list-group-item:last-child {
+//     border-bottom-right-radius: 0;
+//     border-bottom-left-radius: 0;
+// }
+
+/* Remove border and add padding to thumbnails */
+// .thumbnail {
+//     padding: 0 0 15px 0;
+//     border: none;
+//     border-radius: 0;
+// }
+
+// .thumbnail p {
+//     margin-top: 15px;
+//     color: #555;
+// }
+
+/* Black buttons with extra padding and without rounded borders */
+// .btn {
+//     padding: 10px 20px;
+//     background-color: #333;
+//     color: #f1f1f1;
+//     border-radius: 0;
+//     transition: .2s;
+// }
+
+/* On hover, the color of .btn will transition to white with black text */
+// .btn:hover, .btn:focus {
+//     border: 1px solid #333;
+//     background-color: #fff;
+//     color: #000;
+// }
+
+
+
+
+
+
+
+
+/*Services*/
+
+  // .sec-services {
+  //   background: #f9f9f9;
+  // }
+  //
+  // .sec-services i {
+  //   display: block;
+  //   margin: auto;
+  //   width: 45px;
+  // }
+  //
+  // .sec-services .fa-paint-brush {
+  //   width: 64px;
+  // }
+  //
+  // .sec-services .fa-code {
+  //   width: 68px;
+  // }
+  //
+  // .sec-services h2 {
+  //   margin: 1em 0;
+  // }
+
+
+
+
+//---------中间广告图---------
+.jumbotron {
+  background-image:url('https://ws3.sinaimg.cn/large/006tNbRwgy1fg9mw7vs2fj31400p0tgn.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 110px;
+   border-radius: 0; //圆角为0
+}
+
+
+
+  .jumbotron h1, .jumbotron .h1 {
+      text-align: left;//文字左对齐
+      color: #222;  //字体颜色
+
+      padding: 50px 20px 0;//上50px，左右20px，下0
+  }
+
+  .jumbotron p {
+      margin: 0;//上下左右margin为0
+      font-size: 26px;//字体大小
+      max-width: 500px;//最大宽度
+      background-color: rgba(250, 250, 250, 0.39);//背景颜色含透明度
+      padding: 20px;//上下左右padding为20px
+      text-align:left;//文字左对齐
+      color: #222;//字体颜色
+
+      border-bottom-right-radius: 3px;//右下角圆边
+      border-bottom-left-radius: 3px;//左下角圆边
+  }
+
+
+.slogan {
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
+  color: white;
+  top: 12px;
+}
+
+.lead {
+  margin-bottom: 60px;
+  text-align: center;
+  color: white;
+}
+
+container-fluid .jumbotron{
+    padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
+    margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+    border-radius: 0;//圆角为0
+  }
+
+
+
+// 首页的our-brandsection
+
+.our-brand{
+   background-color: #F2F2F2;
+
+   img{
+     margin: 25px 15px 35px 15px;
+     width: 150px;
+     background-color: #F2F2F2;
+   }
+}
+
+//---------最下面广告图（马上约车）---------
+.lp-section-bottom{
+   background: linear-gradient(rgba(12,12,9,0.4), rgba(12,12,9,0.4)),url("https://ws2.sinaimg.cn/large/006tNbRwgy1fg9lmrmyqxj30xc0ir76c.jpg");
+   background-position: center 80%;//设置背景图片的起始位置
+   background-size: cover;//会保持图像本身的宽高比例，将图片缩放到正好完全覆盖定义背景的区域
+   margin-left: auto;//左外边距，自动
+   margin-right: auto;//右外边距，自动
+   margin-bottom: 0;//底部外边距，无
+   width: 100%;//设置元素的高度
+   min-width: 960px;//最小宽度
+   height: 380px;//高度设置
+   position: relative;//属性规定元素的相对
+   margin-top: 50px;
+}
+
+.action-btn {
+   box-sizing: border-box;//为元素设定的宽度和高度决定了元素的边框盒
+   cursor: pointer;//光标呈现为指示链接的指针
+   margin: 10px auto 0;
+   border-radius: 0.2em;
+   text-align: center;
+   font-size: 1.428em;
+   text-transform: uppercase;
+   letter-spacing: 0.3em;
+   padding: 0.57em 1.9em;
+   margin-top: 2.85em;
+   text-align: center;
+   text-overflow: clip;
+   letter-spacing: 2px;
+   color: #FF5722;
+   background: #37474F;
+   border: 2px solid #37474F;
+   transition: background-color 0.3s
+}
+
+
+.lp-section-bottom .bottom-content p {
+   color: white;
+   font-size: 1.4em;
+   margin-bottom: 60px;
+   letter-spacing: 3px;
+}
+
+.lp-section-bottom .bottom-content {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: 700px;
+   height: 200px;
+   position: relative;
+   text-align: center;
+   padding-top: 40px;
+}
